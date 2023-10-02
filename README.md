@@ -35,7 +35,7 @@ has_many :orders
 
 ### Association
 belongs_to :user
-has_one :transaction
+has_one :order
 belongs_to_active_hash :category
 belongs_to_active_hash :condition
 belongs_to_active_hash :delivery_charge
@@ -65,7 +65,7 @@ has_one :address
 | street_address       | string     | null: false                          |
 | building_name        | string     |                                      |
 | phone_number         | string     | null: false                          |
-| oder                 | references | null: null: false, foreign_key: true |
+| order                 | references | null: null: false, foreign_key: true |
 
 ### Association
 belongs_to :order
