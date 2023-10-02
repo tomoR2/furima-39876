@@ -3,20 +3,20 @@
 
 ## users テーブル
 
-| Column                  | Type   | Options            |
-| ------------------      | ------ | -----------        |
-| nick_name               | string | null: false unique |
-| email                   | string | null: false unique |
-| encrypted_password      | string | null: false        |
-| family_name             | string | null: false        |
-| first_name              | string | null: false        |
-| family_name_kana        | string | null: false        |
-| first_name_kana         | string | null: false        |
-| yymmdd                  | string | null: false        |
+| Column                  | Type   | Options                  |
+| ------------------      | ------ | -----------              |
+| nick_name               | string | null: false              |
+| email                   | string | null: false, unique:true |
+| encrypted_password      | string | null: false              |
+| family_name             | string | null: false              |
+| first_name              | string | null: false              |
+| family_name_kana        | string | null: false              |
+| first_name_kana         | string | null: false              |
+| birth_day               | date   | null: false              |
 
 ### Association
 has_many :items
-has_many :transactions
+has_many :orders
 
 
 ## items テーブル
@@ -42,7 +42,7 @@ belongs_to_active_hash :delivery_charge
 belongs_to_active_hash :prefecture
 belongs_to_active_hash :delivery_days
 
-## transactions テーブル
+## orders テーブル
 
 | Column               | Type       | Options                              |
 | ------               | ------     | -------------------------------      |
@@ -65,9 +65,9 @@ has_one :address
 | street_address       | string     | null: false                          |
 | building_name        | string     |                                      |
 | phone_number         | string     | null: false                          |
-| transaction          | references | null: null: false, foreign_key: true |
+| oder                 | references | null: null: false, foreign_key: true |
 
 ### Association
-belongs_to :transaction
+belongs_to :order
 belongs_to_active_hash :prefecture
 
