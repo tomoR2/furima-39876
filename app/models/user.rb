@@ -5,10 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          validates :nick_name, presence: true
-         validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'を入力してください' }
-         validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'を入力してください' }
-         validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶ]+\z/, message: 'をカナ入力してください' }
-         validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶ]+\z/, message: 'をカナ入力してください' }
+         validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/, message: 'を入力してください' }
+         validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/, message: 'を入力してください' }
+         validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶー]+\z/, message: 'をカナ入力してください' }
+         validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー]+\z/, message: 'をカナ入力してください' }
          validates :birth_day, presence: true
 
         
