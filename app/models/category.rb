@@ -1,17 +1,18 @@
 class Category < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
-    { id: 2, name: '経済' },
-    { id: 3, name: '政治' },
-    { id: 4, name: '地域' },
-    { id: 5, name: '国際' },
-    { id: 6, name: 'IT' },
-    { id: 7, name: 'エンタメ' },
-    { id: 8, name: 'スポーツ' },
-    { id: 9, name: 'グルメ' },
-    { id: 10, name: 'その他' }
+    { id: 1, item_status: '---' },
+    { id: 2, item_status: 'レディース' },
+    { id: 3, item_status: 'メンズ' },
+    { id: 4, item_status: 'ベビー・キッズ' },
+    { id: 5, item_status: 'インテリア・住まい・小物' },
+    { id: 6, item_status: '本・音楽・ゲーム' },
+    { id: 7, item_status: 'おもちゃ・ホビー・グッズ' }
+    { id: 8, item_status: '家電・スマホ・カメラ' },
+    { id: 9, item_status: 'スポーツ・レジャー' },
+    { id: 10, item_status: 'ハンドメイド' }
+    { id: 11, item_status: 'その他' }
   ]
 
   include ActiveHash::Associations
-  has_many :item
+  has_many :items
   end
