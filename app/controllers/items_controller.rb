@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
-  # before_action :authenticate_user!, only: [:new, :edit ,:destroy]
+  before_action :authenticate_user!, only: [:new, :edit ,:destroy]
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @items = items.all
+    @items = items.order("created_at DESC") #新着投稿順
   end
 
   def new

@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   has_one :order
   has_one_attached :image
 
-  # validates :text, presence: true
-
+  validates :item_name, :concept, presence: true
+  validates :category_id, :condition_id, :delivery_charge, 
+  :delivery_days_id, :prefecture_id, :delivery_days_id, numericality: { other_than: 1 , message: "can't be blank"} 
 end

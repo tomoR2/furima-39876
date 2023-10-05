@@ -6,10 +6,10 @@ class Category < ActiveHash::Base
     { id: 4, item_status: 'ベビー・キッズ' },
     { id: 5, item_status: 'インテリア・住まい・小物' },
     { id: 6, item_status: '本・音楽・ゲーム' },
-    { id: 7, item_status: 'おもちゃ・ホビー・グッズ' }
+    { id: 7, item_status: 'おもちゃ・ホビー・グッズ' },
     { id: 8, item_status: '家電・スマホ・カメラ' },
     { id: 9, item_status: 'スポーツ・レジャー' },
-    { id: 10, item_status: 'ハンドメイド' }
+    { id: 10, item_status: 'ハンドメイド' },
     { id: 11, item_status: 'その他' }
   ]
 
