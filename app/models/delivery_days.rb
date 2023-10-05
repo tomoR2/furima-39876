@@ -1,9 +1,9 @@
-class Category < ActiveHash::Base
+class DeliveryDays < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
-    { id: 2, name: '1~2日後' },
-    { id: 3, name: '2~3日後' },
-    { id: 4, name: '4~7日後' }
+    { id: 1, days: '---' },
+    { id: 2, days: '1~2日後' },
+    { id: 3, days: '2~3日後' },
+    { id: 4, days: '4~7日後' }
   ]
 
   include ActiveHash::Associations

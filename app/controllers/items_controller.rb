@@ -1,29 +1,23 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit ,:destroy]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :create]
 
   def index
-    @items = items.order("created_at DESC") #新着投稿順
+    @items = Item.all
   end
 
   def new
-    @item = item.new
+    @item = Item.new
   end
 
   def create
-    Item.create(item_params)
-    redirect_to '/'
+    @item =Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+     render :new, status: :unprocessable_entity
+    end
   end
 
-
-  # def prototype_params
-  #   params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
-  # end
-
-  # def comment_params
-  #   params.require(:comment).permit(:content).merge(user_id: current_user.id , prototype_id:@prototype.id)
-  # end
-  
 
   private
 
@@ -34,7 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:item_name, :concept, :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:image,:item_name, :concept, :category_id, :condition_id, :delivery_charge_id, :prefecture_id, :delivery_days_id, :price).merge(user_id: current_user.id)
   end
 
 
