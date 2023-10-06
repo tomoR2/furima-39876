@@ -10,6 +10,5 @@ window.addEventListener('turbo:load', () => {
     const profitValue = inputValue - feeValue;         //利益計算
     profitInput.innerHTML = profitValue;               //計算結果
 
-    console.log(inputValue);
   })
 });

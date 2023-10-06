@@ -65,16 +65,28 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price 半角数字300～9999999で設定ください")
       end
 
-      it "priceが300以下では登録できない" do
+      it "priceが299以下では登録できない" do
         @item.price = '299'
         @item.valid?
         expect(@item.errors.full_messages).to include("Price 半角数字300～9999999で設定ください")
       end
 
-      it "priceが9999999以上では登録できない" do
-        @item.price = '99999999'
+      it "priceが100000000以上では登録できない" do
+        @item.price = '100000000'
         @item.valid?
         expect(@item.errors.full_messages).to include("Price 半角数字300～9999999で設定ください")
+      end
+
+      it "priceに半角数字以外が含まれていると登録できない" do
+        @item.price = '11ああああ'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price 半角数字300～9999999で設定ください")
+      end
+
+      it "userが紐づいていない場合登録できない" do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User must exist")
       end
 
     end
