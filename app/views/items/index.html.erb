@@ -136,11 +136,11 @@
             <%= image_tag item.image, class: "item-img" %>
 
 
-           <%# 決済機能の後に使う予定 %>
-           <%# <% if @item.order_item.present? %> 
-            <%# <div class='sold-out'>
-            <span>Sold Out!!</span> %>
-            <%# </div>
+           <%# Soldoutの条件文 %>
+           <% if item.order.present? %> 
+             <div class='sold-out'>
+             <span>Sold Out!!</span>
+             </div>
            <% end %> 
 
           </div>
