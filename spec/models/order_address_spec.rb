@@ -14,9 +14,10 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address).to be_valid
       end
 
+    # 異常系テスト(建物名が空)
       it '建物名が空でも登録できる' do
         @order_address.building_name = ""
-        @order_address.valid?
+        expect(@order_address).to be_valid
         end
       end
 
