@@ -5,8 +5,8 @@ class OrderAddress
 
   with_options presence: true do
   #  orderのバリデーション
-    # validates :user_id
-    # validates :item_id
+    validates :user_id
+    validates :item_id
 
   #  addressのバリデーション
     validates :municipality
