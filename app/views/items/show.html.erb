@@ -35,7 +35,7 @@
    
     <%# 未購入者かつ未購入の商品 %>
    <% else %>
-    <%= link_to "購入画面に進む", item_orders_path(@item) ,class:"item-red-btn"%>
+    <%= link_to "購入画面に進む", item_orders_path(@item), data: { turbo: false },class:"item-red-btn"%>
     <% end %>
    <% end %>
    <% end %>
